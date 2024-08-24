@@ -42,14 +42,18 @@
             <h2 id="idiom"></h2>
             <p><strong>뜻:</strong> <span id="meaning"></span></p>
             <p><strong>한자:</strong> <span id="example"></span></p>
+            <p><strong>영어:</strong> <span id="english"></span></p>
+            <p><strong>일본어:</strong> <span id="japan"></span></p>
+            <p><strong>일본어말하기:</strong> <span id="japansp"></span></p>
+
         </div>
     </div>
 
     <script>
         const idioms = [
-        { idiom:"개과천선",meaning: "잘못을 고쳐 착하게 변함", example:"改過遷善 ."},
-        { idiom:"어불성서",meaning:"말이 조금도 사리에 맞지 아니함.", example:"語不成說  ."},
-        { idiom:"의기투합",meaning:"마음이나 뜻이 서로 맞음.", example:"意氣投合   ."},
+        { idiom:"개과천선",meaning: "잘못을 고쳐 착하게 변함", example:"改過遷善 .", english:"correcting a mistake and changing it to be nice", japan: "過ちを悔いてよくなること", japansp: "아야마치오 쿠이테 요쿠 나루 코토"},
+        { idiom:"어불성서",meaning:"말이 조금도 사리에 맞지 아니함.", example:"語不成說  .",  english:"not the least bit of sense in one's words" ,japan: "話が少しも筋が通らない", japansp: "하나시가 스코시모 스지가 토오라나이"},
+        { idiom:"의기투합",meaning:"마음이나 뜻이 서로 맞음.", example:"意氣投合   .",english:"the condition of having the same heart and will", japan: "心相合", japansp: "신소오고오" },
         { idiom:"견리사의",meaning:"눈앞에 이익을 보면 의리를 먼저 생각함.", example:"見利思義   ."},
         { idiom:"중구난방",meaning:"뭇사람의 말을 막기가 어렵다는 뜻으로, 막기 어려울 정도로 여럿이 마구 지껄임을 이르는 말.", example:"衆口難防   ."},
         { idiom:"금과옥조",meaning:"금이나 옥처럼 귀중히 여겨 꼭 지켜야 할 법칙이나 규정.", example:"金科玉條   ."},
@@ -128,6 +132,9 @@
             const idiomElement = document.getElementById('idiom');
             const meaningElement = document.getElementById('meaning');
             const exampleElement = document.getElementById('example');
+            const englishElement = document.getElementById('english');
+            const japanElement = document.getElementById('japan');
+            const japanspElement = document.getElementById('japansp');
 
             const idiom = idioms.find(item => item.idiom === query);
 
@@ -135,6 +142,9 @@
                 idiomElement.textContent = idiom.idiom;
                 meaningElement.textContent = idiom.meaning;
                 exampleElement.textContent = idiom.example;
+                englishElement.textContent = idiom.english;
+                japanElement.textContent = idiom.japan;
+                japanspElement.textContent = idiom.japansp;
                 resultDiv.style.display = 'block';
             } else {
                 resultDiv.style.display = 'none';
