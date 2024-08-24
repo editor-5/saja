@@ -31,6 +31,12 @@
             background-color: #e0f7fa;
             border-radius: 8px;
         }
+        #example {
+            font-size: 1.5em;
+        }
+        #search-input {
+            font-size: 1.5em;
+        }        
     </style>
 </head>
 <body>
@@ -125,6 +131,11 @@
         { idiom:"신상필벌",meaning:"공이 있는 자에게는 반드시 상을 주고, 죄가 있는 사람에게는 반드시 벌을 준다는 뜻으로, 상과 벌을 공정하고 엄중하게 하는 일을 이르는 말.", example:"信賞必罰 ."},
         { idiom:"일거양득",meaning: "한 가지 일을 하여 두 가지 이익(利益)을 얻음.", example:" 一擧兩得 .", english:"To do one thing and gain two benefits", japan: "一つの仕事をして二つの利益を得ること", japansp: "히토츠노 시고토오 시테 후타츠노 리에키오 에루 코토"},
         ];
+
+        // Input 필드에 커서가 갔을 때 이전 입력 값을 지우는 함수
+        document.getElementById('search-input').addEventListener('focus', function() {
+                this.value = ''; // Input 필드의 값을 지웁니다.
+            });
 
         function searchIdiom() {
             const query = document.getElementById('search-input').value.trim();
